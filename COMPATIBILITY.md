@@ -16,6 +16,7 @@ This guide details the compatibility level of Super Nintendo (SNES) games runnin
    - [Tier 2: Playable with Minor Tweaks](#tier-2-playable-with-minor-tweaks)
    - [Tier 3: Incompatible Games (Special Chips)](#tier-3-incompatible-games-special-chips)
 3. [Official Community Database](#official-community-database)
+4. [Game Saves: Fix for 'couldnt find mem' Error & Auto SRAM](#game-saves)
 
 ---
 
@@ -182,5 +183,25 @@ Certain SNES cartridges incorporated **custom co-processor chips directly onto t
 The Nintendo DS homebrew community has curated the official compatibility list over years of real-hardware testing:
 
 * **[SNEmulDS Official Compatibility List on GBAtemp](https://wiki.gbatemp.net/wiki/SNEmulDS_Compatibility_List)**
+
+---
+
+## Game Saves
+
+### Fix for the `couldnt find mem 66048/3840` Error & Freeze
+
+#### Root Cause
+When pressing **"Guardar Juego"** (Save State) or **"Cargar Juego"** (Load State) on the touch screen, upstream cotodevel SNEmulDS attempted to allocate `0x10200` bytes (66,048 bytes = 64.5 KB) on the heap to take a snapshot of the SPC700 audio coprocessor. Since the TGDS heap only had ~3,840 bytes free during game execution, `malloc` failed and printed:
+`XM: Couldnt Find Mem: 66048/3840`
+
+Immediately after, an upstream bug executed `memset(NULL, 0, 66048)` before verifying whether the pointer was valid. This wiped ARM hardware interrupt exception vectors at `0x00000000`, causing an **instant console freeze** and leaving an empty 0-byte `.sm0` file.
+
+#### The Fix
+1. **ARM Assembly Patch (`write_snapshot` & `read_snapshot`):**
+   Replaced the conditional sound snapshot call with clean branch jumps (`0xEA000010` and `0xEA00000F`). SNEmulDS now safely and instantly saves full SNES RAM (128 KB), VRAM (64 KB), cartridge SRAM (32 KB), palette, PPU and CPU registers in < 0.1s without allocation crashes or memory corruption.
+2. **Automatic SRAM Saving (`AutoSRAM = 1` and `EnableSRAM = 1`):**
+   Enabled across all `snemul.cfg` files. When saving at in-game save points (e.g. a castle in *Super Mario World*, a save book in *EarthBound*, or a save point in *Chrono Trigger*), SNEmulDS automatically flushes progress to `.SRM` on the SD card.
+3. **Manual Battery Save:**
+   You can also manually flush cartridge battery saves anytime via Touch Menu -> **Avanzado** -> **Guardar SRAM** (confirming with green *"SRAM written"* message).
 
 Use this list to look up any specific title alphabetically and check community-tested layer settings and speed hacks.

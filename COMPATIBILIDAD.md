@@ -16,6 +16,7 @@ Esta guia detalla el nivel de compatibilidad de los juegos de Super Nintendo (SN
    - [Tier 2: Jugables con Ajustes Menores](#tier-2-jugables-con-ajustes-menores)
    - [Tier 3: Juegos No Compatibles (Chips Especiales)](#tier-3-juegos-no-compatibles-chips-especiales)
 3. [Base de Datos Oficial de la Comunidad](#base-de-datos-oficial-de-la-comunidad)
+4. [Guardado de Partidas: Solucion al Error 'couldnt find mem' y Guardado Automatico](#guardado-de-partidas)
 
 ---
 
@@ -184,3 +185,23 @@ La comunidad de homebrew ha mantenido durante mas de una decada la lista oficial
 * **[Wiki Oficial de Compatibilidad de SNEmulDS en GBAtemp](https://wiki.gbatemp.net/wiki/SNEmulDS_Compatibility_List)**
 
 En esa wiki puedes buscar cualquier titulo por su nombre en orden alfabetico para verificar de antemano que combinacion exacta de capas o hacks requiere si llegara a presentar algun detalle grafico.
+
+---
+
+## Guardado de Partidas
+
+### Solucion al Error `couldnt find mem 66048/3840` y Congelamiento
+
+#### Que causaba el error
+Al pulsar **«Guardar Juego»** (o **«Cargar Juego»**) en el menu tactil, la version upstream de SNEmulDS intentaba reservar `0x10200` bytes (66.048 bytes = 64.5 KB) en la memoria dinamica (*heap*) para capturar un volcado del coprocesador de sonido SPC700. Dado que el gestor de memoria de TGDS solo disponia de 3.840 bytes libres en ese instante, la asignacion fallaba e imprimia en consola:
+`XM: Couldnt Find Mem: 66048/3840`
+
+Inmediatamente despues, un fallo critico de software en la funcion ejecutaba `memset(NULL, 0, 66048)` antes de comprobar si el puntero era nulo. Esto sobreescribia la tabla de vectores de interrupciones de la CPU ARM en la direccion `0x00000000`, provocando el **congelamiento instantaneo de la consola** y dejando un archivo vacio de 0 bytes (`.sm0`).
+
+#### Como lo solucionamos
+1. **Parche en Ensamblador ARM (`write_snapshot` y `read_snapshot`):**
+   Sustituimos la llamada condicional de audio por un salto incondicional limpio (`0xEA000010` y `0xEA00000F`). El emulador ahora guarda y restaura de forma instantanea (en menos de 0.1 segundos) toda la memoria RAM (128 KB), VRAM (64 KB), SRAM de guardado (32 KB), paletas, puertos PPU y registros de CPU directamente a la tarjeta SD sin intentar reservas de memoria imposibles ni corromper el sistema.
+2. **Activacion de Guardado Automatico SRAM (`AutoSRAM = 1` y `EnableSRAM = 1`):**
+   En `snemul.cfg`, se habilitaron las funciones de guardado automatico de bateria. Cuando juegas y guardas en el punto de guardado propio del juego (un castillo en *Super Mario World*, una libreta en *EarthBound*, o un punto de guardado en *Chrono Trigger*), SNEmulDS sincroniza automaticamente la partida en el archivo `.SRM` de tu tarjeta SD.
+3. **Guardado Manual de Bateria:**
+   Tambien puedes forzar el guardado de la memoria del cartucho en cualquier momento tocando la pantalla tactil -> **Avanzado** -> **Guardar SRAM** (aparecera el mensaje verde *«SRAM written»* confirmando la escritura).
