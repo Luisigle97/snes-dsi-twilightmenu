@@ -10,6 +10,7 @@ Esta guia detalla el nivel de compatibilidad de los juegos de Super Nintendo (SN
 1. [Como Solucionar Juegos Problematicos (Top Gear y La Mascara)](#como-solucionar-juegos-problematicos)
    - [Top Gear 1 y 2 (y Top Racer)](#1-top-gear-1-y-2--top-racer)
    - [La Mascara (The Mask)](#2-la-mascara-the-mask)
+   - [Texturas y Fondos Faltantes en Cualquier Juego](#3-solucion-a-texturas-y-fondos-faltantes-en-cualquier-juego)
 2. [Lista Maestra de Compatibilidad](#lista-maestra-de-compatibilidad)
    - [Tier 1: Compatibles al 100% (60 FPS / Perfectos)](#tier-1-compatibles-al-100-60-fps--perfectos)
    - [Tier 2: Jugables con Ajustes Menores](#tier-2-jugables-con-ajustes-menores)
@@ -83,6 +84,28 @@ Desactivar el canal de transparencias conflictivo y forzar las prioridades de fo
   3. Cambia **Transparencias** a **OFF** (`Transparency = 0`).
   4. Activa **Prioridades BG** (`BGPriorities = 1`).
   5. Guarda los ajustes para este juego. El personaje y los enemigos se mantendran solidos y siempre al frente.
+
+---
+
+### 3. Solucion a Texturas y Fondos Faltantes en Cualquier Juego
+
+#### ¿Por que faltan texturas en ciertos juegos de SNES en la Nintendo DS?
+1. **La 4ª Capa (BG4) desactivada por defecto:** En el emulador original de 2007, la Capa 4 de la SNES venia apagada (`BGLayers = 10111`) para ahorrar bateria en la Nintendo DS Lite. En nuestro paquete la activamos globalmente (`BGLayers = 11111`) aprovechando la potencia a 133 MHz de la DSi, restaurando de inmediato cielos, nubes, marcadores y texturas secundarias.
+2. **El conflicto de Transparencias (Alpha Blending):**
+   * La Super Nintendo original podia sumar y restar iluminacion entre hasta 4 capas a la vez (por ejemplo: niebla + agua + personajes + fondo).
+   * El procesador 2D de la Nintendo DS solo puede mezclar **dos capas a la vez** por hardware.
+   * Cuando un juego intenta mezclar mas capas, la DS no puede calcular el color resultante y le asigna transparencia total (`Alpha = 0`) o color negro, haciendo que **bloques enteros de texturas, fuentes o sprites se vuelvan invisibles**.
+   * **Solucion:** Desactivar transparencias (`Transparency: OFF`). Al apagarla, el 100% de las texturas ocultas vuelven a dibujarse de forma solida y nitida.
+3. **Prioridad de Celdas (Tile Priority):**
+   * En SNES, cada textura de 8x8 pixeles tiene prioridad propia. En Nintendo DS, la prioridad se aplica a toda la capa completa.
+   * Si una textura de suelo o pared parece "detras" de lo que deberia, en el menu tactil cambia **Prioridades BG** a `1` o `3` para traer los sprites al frente.
+
+#### Pasos para corregir texturas faltantes en vivo desde la pantalla tactil:
+1. Durante la partida, toca la pantalla inferior para abrir el menu de SNEmulDS.
+2. Pulsa en **Opciones** (o **Avanzado**).
+3. Cambia **Transparencias** a **OFF** (`Transparency: OFF`). *(Esto arregla el 80% de texturas faltantes en SNES).*
+4. Entra en **Capas (Layers)** y asegurate de que todas esten marcadas: `BG1`, `BG2`, `BG3`, `BG4` y `Sprites`.
+5. Si un personaje o elemento del suelo queda tapado, pulsa en **Prioridades BG** y prueba entre `1`, `2` o `3` hasta ver el orden correcto.
 
 ---
 
