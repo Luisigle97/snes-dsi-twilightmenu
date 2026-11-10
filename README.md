@@ -1,4 +1,4 @@
-# SNEmulDS DSi TWL Bundle para TWiLight Menu++
+﻿# SNEmulDS DSi TWL Bundle para TWiLight Menu++
 
 [![Plataforma](https://img.shields.io/badge/Plataforma-Nintendo%20DSi%20%7C%20DSi%20XL-e60012.svg)](https://es.wikipedia.org/wiki/Nintendo_DSi)
 [![Compatibilidad](https://img.shields.io/badge/TWiLight%20Menu%2B%2B-v27.25.1%2B-blue.svg)](https://github.com/DS-Homebrew/TWiLightMenu)
@@ -32,29 +32,29 @@ Este proyecto soluciona todos los problemas historicos de arranque, congelamient
 
 ```text
 snes-dsi-twilightmenu/
-├── sd_card_package/             <-- Archivos listos para copiar a tu tarjeta SD
-│   ├── _nds/
-│   │   └── TWiLightMenu/
-│   │       ├── addons/Virtual Console
-│   │       ├── emulators/
-│   │       │   ├── snemulds-shim.nds
-│   │       │   ├── snemulds-shim.ini
-│   │       │   ├── SNEmulDS.srl       (TWL 133 MHz)
-│   │       │   ├── SNEmulDS.nds       (NTR Fallback)
-│   │       │   ├── SNEmulDS_0.6a.nds  (Clasico 2007)
-│   │       │   └── snemul.cfg
-│   │       └── extras/
-│   │           ├── config.sfc.ini     (Lanzador directo)
-│   │           └── config.smc.ini     (Lanzador directo)
-│   ├── snes/                          <-- Carpeta donde van tus juegos .smc / .sfc
-│   │   └── snemul.cfg
-│   └── snemul.cfg                     <-- Configuracion global con perfiles optimizados
-├── release/
-│   └── SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip  <-- Paquete comprimido listo para descargar
-├── GUIA_INSTALACION.md          <-- Guia paso a paso para usuarios
-├── CONFIGURACION_PANTALLA.md    <-- Manual tecnico de escalado y pantalla tactil
-├── CREDITS.md                   <-- Atribuciones y licencias originales
-└── README.md
+â”œâ”€â”€ sd_card_package/             <-- Archivos listos para copiar a tu tarjeta SD
+â”‚   â”œâ”€â”€ _nds/
+â”‚   â”‚   â””â”€â”€ TWiLightMenu/
+â”‚   â”‚       â”œâ”€â”€ addons/Virtual Console
+â”‚   â”‚       â”œâ”€â”€ emulators/
+â”‚   â”‚       â”‚   â”œâ”€â”€ snemulds-shim.nds
+â”‚   â”‚       â”‚   â”œâ”€â”€ snemulds-shim.ini
+â”‚   â”‚       â”‚   â”œâ”€â”€ SNEmulDS.srl       (TWL 133 MHz)
+â”‚   â”‚       â”‚   â”œâ”€â”€ SNEmulDS.nds       (NTR Fallback)
+â”‚   â”‚       â”‚   â”œâ”€â”€ SNEmulDS_0.6a.nds  (Clasico 2007)
+â”‚   â”‚       â”‚   â””â”€â”€ snemul.cfg
+â”‚   â”‚       â””â”€â”€ extras/
+â”‚   â”‚           â”œâ”€â”€ config.sfc.ini     (Lanzador directo)
+â”‚   â”‚           â””â”€â”€ config.smc.ini     (Lanzador directo)
+â”‚   â”œâ”€â”€ snes/                          <-- Carpeta donde van tus juegos .smc / .sfc
+â”‚   â”‚   â””â”€â”€ snemul.cfg
+â”‚   â””â”€â”€ snemul.cfg                     <-- Configuracion global con perfiles optimizados
+â”œâ”€â”€ release/
+â”‚   â””â”€â”€ SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip  <-- Paquete comprimido listo para descargar
+â”œâ”€â”€ GUIA_INSTALACION.md          <-- Guia paso a paso para usuarios
+â”œâ”€â”€ CONFIGURACION_PANTALLA.md    <-- Manual tecnico de escalado y pantalla tactil
+â”œâ”€â”€ CREDITS.md                   <-- Atribuciones y licencias originales
+â””â”€â”€ README.md
 ```
 
 ---
@@ -99,3 +99,4 @@ Este paquete recopila, repara e integra el esfuerzo de talentosos desarrolladore
 ## Licencia
 
 Este repositorio se distribuye bajo los terminos de la licencia **GNU General Public License v2.0 (GPL-2.0)**, respetando las licencias originales de los componentes derivados. Consulta el archivo [LICENSE](LICENSE) para mas detalles.
+
