@@ -1,0 +1,1 @@
+Coloca tus juegos de Super Nintendo (.smc o .sfc) en esta carpeta.

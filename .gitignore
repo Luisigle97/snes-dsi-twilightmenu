@@ -1,0 +1,15 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Exclude roms if added locally
+*.smc
+*.sfc
+!sd_card_package/snes/COLOCA_TUS_ROMS_AQUI.txt
