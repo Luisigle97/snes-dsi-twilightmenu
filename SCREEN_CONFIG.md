@@ -66,3 +66,9 @@ The bundled `snemul.cfg` includes pre-tuned settings for popular classics:
   `Scaled = 2 | Transparency = 0 | YScroll = 16`
 * **Super Metroid:**
   `Scaled = 2 | SpeedHacks = 1 | Vblank = 1 | YScroll = 16`
+* **Top Gear 1 & 2 / Top Racer:**
+  `BGLayers = 10101 | Transparency = 0 | Vblank = 1 | SpeedHacks = 0 | Scaled = 2 | YScroll = 16`
+  *(Note: Disabling layer BG2 prevents road glitches and split-screen flickering).*
+* **The Mask:**
+  `Transparency = 0 | BGPriorities = 1 | Vblank = 1 | SpeedHacks = 1 | Scaled = 2 | YScroll = 16`
+  *(Note: Disabling transparencies prevents character sprites from vanishing).*

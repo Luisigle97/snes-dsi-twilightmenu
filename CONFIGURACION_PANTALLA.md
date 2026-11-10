@@ -66,3 +66,9 @@ En este paquete ya dejamos configurados en `snemul.cfg` los siguientes perfiles 
   `Scaled = 2 | Transparency = 0 | YScroll = 16`
 * **Super Metroid:**
   `Scaled = 2 | SpeedHacks = 1 | Vblank = 1 | YScroll = 16`
+* **Top Gear 1 y 2 / Top Racer:**
+  `BGLayers = 10101 | Transparency = 0 | Vblank = 1 | SpeedHacks = 0 | Scaled = 2 | YScroll = 16`
+  *(Nota: Desactivar la capa BG2 elimina la corrupcion de la pista y division de pantalla).*
+* **The Mask (La Mascara):**
+  `Transparency = 0 | BGPriorities = 1 | Vblank = 1 | SpeedHacks = 1 | Scaled = 2 | YScroll = 16`
+  *(Nota: Desactivar transparencias evita la desaparicion de sprites y personajes).*
