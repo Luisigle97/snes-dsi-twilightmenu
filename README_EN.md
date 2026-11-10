@@ -74,6 +74,7 @@ snes-dsi-twilightmenu/
 
 * [Step-by-Step Installation Guide](INSTALLATION_GUIDE.md) | [Guia Paso a Paso de Instalacion](GUIA_INSTALACION.md)
 * [Screen Scaling & Touch Menu Guide](SCREEN_CONFIG.md) | [Guia de Escalado de Pantalla y Menu Tactil](CONFIGURACION_PANTALLA.md)
+* [Compatibility & Game Fixes Guide](COMPATIBILITY.md) | [Guia de Compatibilidad y Solucion de Juegos](COMPATIBILIDAD.md)
 * [Credits & Attributions](CREDITS.md)
 
 ---
