@@ -1,5 +1,7 @@
 # Guia Paso a Paso de Instalacion
 
+[Español](GUIA_INSTALACION.md) | [English](INSTALLATION_GUIDE.md)
+
 Esta guia te mostrara como instalar y dejar listo el emulador de Super Nintendo (SNES) en tu **Nintendo DSi o Nintendo DSi XL** ejecutando **TWiLight Menu++ (version v27.25.1 o superior)**.
 
 ---
@@ -46,16 +48,16 @@ sd:/
 ```
 
 ### Paso 3: Agregar tus Juegos (ROMs)
-* Copia tus juegos de Super Nintendo con extension `.sfc` o `.smc` dentro de la carpeta:
-  ```text
-  sd:/snes/
-  ```
-  *(Nota: Tambien puedes usar `sd:/ROMS/SNES/`, pero `sd:/snes/` es la ruta estandar con compatibilidad total en todos los modos).*
+* Puedes colocar tus juegos de Super Nintendo (`.sfc` o `.smc`) en la carpeta que prefieras de tu tarjeta SD:
+  * `sd:/snes/`
+  * `sd:/roms/snes/`
+  * `sd:/juegos/snes/`
+* Gracias al paso directo de argumentos (`ARG=%PATH%`), TWiLight Menu++ ejecuta las ROMs desde cualquier directorio sin restricciones.
 
 > **Consejo:** Asegurate de que los nombres de los juegos no terminen con espacios raros antes del punto (por ejemplo, usa `Super Mario World.sfc` en lugar de `Super Mario World .sfc`).
 
 ### Paso 4: Ajustar la Velocidad de Reloj en TWiLight Menu++ (Recomendado)
-1. Coloca la tarjeta SD en tu Nintendo DSi XL y enciendela.
+1. Coloca la tarjeta SD en tu Nintendo DSi / DSi XL y enciendela.
 2. Abre **TWiLight Menu++**.
 3. Presiona `SELECT` para entrar a la **Configuracion de TWiLight Menu++**.
 4. Ve a la pestana **Configuracion de Juegos/Homebrew**:
@@ -67,7 +69,7 @@ sd:/
 
 ## Como Jugar
 
-1. En el explorador de archivos de TWiLight Menu++, entra en la carpeta `snes/`.
+1. En el explorador de archivos de TWiLight Menu++, entra a la carpeta donde tengas tus juegos (por ejemplo `snes/`).
 2. Veras la lista de tus juegos con su icono de cartucho de SNES.
 3. Pulsa **(A)** sobre el juego que desees jugar.
 4. El emulador arrancara de inmediato en modo DSi a 133 MHz, adaptando la pantalla a los 192 pixeles verticales de la consola.
@@ -79,3 +81,4 @@ sd:/
 * **Guardar partida en cualquier momento:** Toca la pantalla tactil inferior durante el juego y pulsa **Guardar Juego** (Save State). Para reanudarla despues, pulsa **Cargar Juego** (Load State).
 * **Partidas guardadas en bateria (SRAM):** Tras guardar partida dentro del propio juego (por ejemplo en el mapa de Super Mario World o un santuario de Zelda), toca la pantalla inferior, entra en **Opciones** y confirma la escritura de SRAM antes de apagar la consola.
 * **Alternar el modo de escalado:** Durante la partida, toca la pantalla inferior y pulsa en la opcion de escalado para probar entre `Scaled 2` (pantalla completa) o `Scaled 0` (pixel perfect con recorte).
+* **Deteccion automatica de idioma:** El menu inferior detecta automaticamente el idioma configurado en tu consola (Espanol, Ingles, Frances, Aleman, Italiano, Japones).

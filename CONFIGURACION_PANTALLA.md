@@ -1,5 +1,7 @@
 # Guia de Escalado de Pantalla y Menu Tactil
 
+[Español](CONFIGURACION_PANTALLA.md) | [English](SCREEN_CONFIG.md)
+
 Esta guia explica en detalle como funciona el renderizado grafico de Super Nintendo en las pantallas de la Nintendo DSi y DSi XL, y como personalizar la experiencia visual a tu gusto.
 
 ---
@@ -19,7 +21,7 @@ Observa un dato fundamental: **El ancho es identico (256 pixeles)**. Por lo tant
 
 En `snemul.cfg` o desde el menu tactil dentro del juego puedes elegir entre tres modos:
 
-### 1. Modo Pantalla Completa (`Scaled = 2`) — *Modo Recomendado por Defecto*
+### 1. Modo Pantalla Completa (`Scaled = 2`) - *Modo Recomendado por Defecto*
 * **Como funciona:** El emulador comprime las 224 lineas a 192 usando un filtro bilineal por hardware.
 * **Ventajas:**
   * Ves el 100% de la pantalla del juego.
@@ -29,10 +31,10 @@ En `snemul.cfg` o desde el menu tactil dentro del juego puedes elegir entre tres
 
 ### 2. Modo Pixel Perfect 1:1 con Compresion Inteligente de HUD (`Scaled = 0`)
 * **Como funciona:** La imagen del juego se dibuja sin ningun tipo de compresion ni escalado (1 pixel de SNES = 1 pixel de DSi). Es la maxima nitidez posible.
-* **El truco de `BG3Squish`:** Para evitar que la barra de vida o el marcador de monedas quede fuera de la pantalla:
+* **El truco de `BG3Squish` y `YScroll = 16`:**
   * `BG3Squish = 1`: Comprime la capa de texto y marcadores (Capa 3) en 16 pixeles hacia abajo.
   * `BG3Squish = 2`: La comprime 32 pixeles.
-  * `YScroll = 16`: Centra la vista del juego verticalmente recortando 16 pixeles en el cielo y 16 en el suelo (zonas que en las televisiones de tubo antiguas solian quedar tapadas por el borde plastico de la TV).
+  * `YScroll = 16`: Centra la vista del juego verticalmente recortando 16 pixeles exactos en el cielo y 16 en el suelo (eliminando temblores, jitter o artefactos de entrelazado).
 * **Ideal para:** Plataformas de accion pura como *Super Mario World*, *Donkey Kong Country*, *Castlevania IV* y *Super Metroid*.
 
 ### 3. Modo Semiescalado (`Scaled = 1`)
@@ -44,7 +46,7 @@ En `snemul.cfg` o desde el menu tactil dentro del juego puedes elegir entre tres
 
 No necesitas editar archivos para cambiar de modo:
 1. Durante una partida, **toca la pantalla inferior (tactil)** con el stylus o el dedo.
-2. Aparecera el menu de control tactil de SNEmulDS.
+2. Aparecera el menu de control tactil modernizado de SNEmulDS.
 3. Presiona el boton de **Escalado (Scaling)** para alternar entre `Scaled 0`, `Scaled 1` y `Scaled 2`.
 4. Observa el cambio al instante en la pantalla superior y dejalo en el que te resulte mas comodo para ese juego en particular.
 
@@ -55,12 +57,12 @@ No necesitas editar archivos para cambiar de modo:
 En este paquete ya dejamos configurados en `snemul.cfg` los siguientes perfiles optimos para los juegos mas populares:
 
 * **Super Mario World:**
-  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 1 | YScroll = 24`
+  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 1 | YScroll = 16`
 * **Donkey Kong Country 1, 2 y 3:**
-  `SpeedHacks = 0 | BGPriorities = 3 | Scaled = 2 | Vblank = 1`
+  `SpeedHacks = 0 | BGPriorities = 3 | Scaled = 2 | Vblank = 1 | YScroll = 16`
 * **Chrono Trigger:**
-  `Scaled = 2 | Vblank = 1 | Sound = 1`
+  `Scaled = 2 | Vblank = 1 | Sound = 1 | YScroll = 16`
 * **The Legend of Zelda: A Link to the Past:**
   `Scaled = 2 | Transparency = 0 | YScroll = 16`
 * **Super Metroid:**
-  `Scaled = 2 | SpeedHacks = 1 | Vblank = 1`
+  `Scaled = 2 | SpeedHacks = 1 | Vblank = 1 | YScroll = 16`

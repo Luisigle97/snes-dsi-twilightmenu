@@ -1,13 +1,15 @@
 # SNEmulDS DSi TWL Bundle para TWiLight Menu++
 
+[Español](README.md) | [English](README_EN.md)
+
 [![Plataforma](https://img.shields.io/badge/Plataforma-Nintendo%20DSi%20%7C%20DSi%20XL-e60012.svg)](https://es.wikipedia.org/wiki/Nintendo_DSi)
 [![Compatibilidad](https://img.shields.io/badge/TWiLight%20Menu%2B%2B-v27.25.1%2B-blue.svg)](https://github.com/DS-Homebrew/TWiLightMenu)
 [![Licencia](https://img.shields.io/badge/Licencia-GPL--2.0-green.svg)](LICENSE)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/tag/v1.0.0)
 
-Paquete optimizado y actualizado de **SNEmulDS (Modo TWL DSi a 133 MHz)** con integracion nativa directa para **TWiLight Menu++**.
+Paquete optimizado y modernizado de **SNEmulDS (Modo TWL DSi a 133 MHz)** con integracion nativa directa para **TWiLight Menu++**.
 
-Este proyecto soluciona todos los problemas historicos de arranque, congelamiento de pantalla tactil, listas de ROMs vacias y errores de escalado visual al emular Super Nintendo en consolas Nintendo DSi y DSi XL.
+Este proyecto soluciona todos los problemas historicos de arranque, congelamiento de pantalla tactil, listas de ROMs vacias y errores de vibracion/escalado visual al emular Super Nintendo en consolas Nintendo DSi y DSi XL.
 
 ---
 
@@ -17,14 +19,16 @@ Este proyecto soluciona todos los problemas historicos de arranque, congelamient
    * Emplea el binario legitimo `SNEmulDS.srl` con identificador DSi (`UnitCode = 0x02`), duplicando la velocidad del procesador de 67 MHz a 133 MHz y accediendo a los 16 MB de memoria RAM completa de la consola (evitando el modo legado de DS Lite de 4 MB).
 2. **Arranque Directo sin Menus Intermedios (`autoboot = true`):**
    * Integracion mediante el puente `snemulds-shim` (desarrollado por Sanrax). Al seleccionar cualquier juego `.sfc` o `.smc` en TWiLight Menu++, arranca directamente la partida sin quedarse trabado en la pantalla de *"Seleccionar ROM"*.
-3. **Parcheo Dinamico en Memoria RAM:**
-   * Corrige el fallo critico del ejecutable DSi oficial donde la pantalla tactil dejaba de responder.
-   * Restaura y desmutea los canales de audio por hardware de la DSi en la transicion de arranque.
-4. **Escalado de Pantalla Optimizado:**
-   * Configurado globalmente en `Scaled = 2` (pantalla completa adaptada a los 192 pixeles verticales de la DSi) con filtrado bilineal para evitar deformaciones bruscas.
-   * Compatibilidad con recorte 1:1 pixel-perfect y compresion de HUD (`BG3Squish`) para juegos como *Super Mario World*, *Donkey Kong Country*, *Chrono Trigger* y *The Legend of Zelda*.
-5. **Menu Tactil en Espanol:**
-   * Menu inferior configurado en Espanol (`Language = 5`), con diseno centrado y accesible al tocar la pantalla tactil.
+3. **Libertad Total de Directorio de Juegos:**
+   * Gracias al paso de argumentos dinamicos (`ARG=%PATH%`), puedes organizar tus juegos en la carpeta que prefieras en tu tarjeta SD (`sd:/snes/`, `sd:/roms/snes/`, `sd:/juegos/`, etc.) sin estar atado a una ruta fija.
+4. **Deteccion Automatica del Idioma de la Consola (`Language = -1`):**
+   * El menu inferior lee y detecta automaticamente el idioma del firmware de la consola (Espanol, Ingles, Frances, Aleman, Italiano, Japones).
+5. **Centrado Vertical sin Entrelazado ni Jitter (`YScroll = 16`):**
+   * Elimina las lineas de vibracion/intervalencia que causaba el desplazamiento asimetrico. La imagen queda centrada de forma matematica (16 pixeles arriba y abajo).
+   * Escalado global en pantalla completa (`Scaled = 2`) con filtrado bilineal y proteccion de HUD (`BG3Squish`).
+6. **Menu Tactil Modernizado:**
+   * Barra de titulo superior limpia y centrada con el rotulo **SNEmulDS**.
+   * Botones tactiles redisenados con proporciones y margenes modernos en la pantalla tactil inferior.
 
 ---
 
@@ -32,70 +36,68 @@ Este proyecto soluciona todos los problemas historicos de arranque, congelamient
 
 ```text
 snes-dsi-twilightmenu/
-|-- sd_card_package/             <-- Archivos listos para copiar a tu tarjeta SD
+|-- sd_card_package/             <-- Archivos listos para copiar a tu SD
 |   |-- _nds/
 |   |   \-- TWiLightMenu/
 |   |       |-- addons/Virtual Console
 |   |       |-- emulators/
 |   |       |   |-- snemulds-shim.nds
 |   |       |   |-- snemulds-shim.ini
-|   |       |   |-- SNEmulDS.srl       (TWL 133 MHz)
-|   |       |   |-- SNEmulDS.nds       (NTR Fallback)
-|   |       |   |-- SNEmulDS_0.6a.nds  (Clasico 2007)
+|   |       |   |-- SNEmulDS.srl
+|   |       |   |-- SNEmulDS.nds
+|   |       |   |-- SNEmulDS_0.6a.nds
+|   |       |   |-- SNEmulDS-legacy.nds
+|   |       |   |-- SNEmulDS-legacy-twlm-path.nds
 |   |       |   \-- snemul.cfg
 |   |       \-- extras/
-|   |           |-- config.sfc.ini     (Lanzador directo)
-|   |           \-- config.smc.ini     (Lanzador directo)
-|   |-- snes/                          <-- Carpeta donde van tus juegos .smc / .sfc
+|   |           |-- config.sfc.ini
+|   |           \-- config.smc.ini
+|   |-- snes/
 |   |   \-- snemul.cfg
-|   \-- snemul.cfg                     <-- Configuracion global con perfiles optimizados
+|   \-- snemul.cfg
 |-- release/
-|   \-- SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip  <-- Paquete comprimido listo para descargar
-|-- GUIA_INSTALACION.md          <-- Guia paso a paso para usuarios
-|-- CONFIGURACION_PANTALLA.md    <-- Manual tecnico de escalado y pantalla tactil
-|-- CREDITS.md                   <-- Atribuciones y licencias originales
-\-- README.md
+|   \-- SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip
+|-- README.md                    <-- Documentacion principal (Espanol)
+|-- README_EN.md                 <-- Main documentation (English)
+|-- GUIA_INSTALACION.md          <-- Guia paso a paso de instalacion
+|-- INSTALLATION_GUIDE.md        <-- Step-by-step installation guide
+|-- CONFIGURACION_PANTALLA.md    <-- Resoluciones, modos de escalado y perfiles
+|-- SCREEN_CONFIG.md             <-- Resolutions, scaling modes & profiles
+|-- CREDITS.md                   <-- Creditos de autores originales
+|-- LICENSE                      <-- Licencia GNU GPL v2.0
+\-- .gitignore
 ```
 
 ---
 
-## Instalacion Rapida
+## Guias Detalladas
 
-1. Descarga el paquete oficial: [SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/download/v1.0.0/SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip)
-2. Descomprime su contenido en la raiz de la tarjeta SD de tu Nintendo DSi / DSi XL (combinando las carpetas `_nds` y `snes`).
-3. Coloca tus juegos de Super Nintendo (`.sfc` o `.smc`) dentro de la carpeta `sd:/snes/`.
-4. Enciende tu Nintendo DSi XL, entra a **TWiLight Menu++**, selecciona tu juego y presiona **(A)**.
-
-Para instrucciones detalladas paso a paso, consulta la [Guia de Instalacion](GUIA_INSTALACION.md).
+* [Guia Paso a Paso de Instalacion](GUIA_INSTALACION.md) | [Step-by-Step Installation Guide](INSTALLATION_GUIDE.md)
+* [Guia de Escalado de Pantalla y Menu Tactil](CONFIGURACION_PANTALLA.md) | [Screen Scaling & Touch Menu Guide](SCREEN_CONFIG.md)
+* [Creditos y Reconocimientos](CREDITS.md)
 
 ---
 
-## Modos de Pantalla y Escalado
+## Descarga Rapida
 
-| Modo | Ajuste en `snemul.cfg` | Comportamiento | Recomendado para |
-| :--- | :--- | :--- | :--- |
-| **Pantalla Completa (Full Scaled)** | `Scaled = 2` *(Por defecto)* | Ajusta las 224 lineas de SNES a las 192 de DSi con filtrado bilineal. Nada se recorta. | Vista completa, RPGs y plataformas generales. |
-| **Pixel Perfect 1:1 + HUD Squish** | `Scaled = 0`, `BG3Squish = 1` | Mantiene nitidez 100% pura y comprime unicamente la barra de vida/puntuacion en pantalla. | *Super Mario World*, *Donkey Kong Country*. |
-| **Semiescalado (Half Scaled)** | `Scaled = 1` | Punto medio con escalado vertical sutil. | Titulos arcade y accion rapida. |
+Puedes descargar el paquete completo listo para descomprimir en la raiz de tu SD desde la pestana de Releases:
 
-> Toca la **pantalla tactil inferior** en cualquier momento mientras juegas para cambiar el modo de escalado en vivo, gestionar *Save States* (guardar/cargar partida) o ajustar el audio.
-
-Consulta los detalles tecnicos en [CONFIGURACION_PANTALLA.md](CONFIGURACION_PANTALLA.md).
+* **[Descargar SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/download/v1.0.0/SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip)**
 
 ---
 
-## Creditos y Agradecimientos
+## Creditos
 
-Este paquete recopila, repara e integra el esfuerzo de talentosos desarrolladores de la comunidad Homebrew de Nintendo DS/DSi:
-
-* **[Archeide](https://www.gamebrew.org/wiki/SNEmulDS):** Creador original de **SNEmulDS** (1997-2007).
-* **Bubble2k & Gladius:** Desarrolladores de los nucleos de emulacion de CPU 65C816 y sonido SPC700.
-* **[Coto (cotodevel)](https://github.com/cotodevel/snemulds):** Creador del proyecto **SNEmulDS Revival**, portando el emulador a *ToolchainGenericDS (TGDS)* y habilitando el modo TWL a 133 MHz.
-* **[Sanrax](https://github.com/Sanrax/snemulds-shim):** Creador de **`snemulds-shim`**, el chainloader que resuelve el paso de argumentos, corrige los bugs de pantalla tactil en DSi y automatiza el autoboot.
-* **[RocketRobz](https://github.com/RocketRobz) y el equipo de [DS-Homebrew](https://github.com/DS-Homebrew/TWiLightMenu):** Creadores de **TWiLight Menu++** y **nds-bootstrap**, el entorno que hace posible la emulacion retro moderna en Nintendo DSi y 3DS.
+Este paquete fue configurado, parcheado y optimizado por **Luisigle97**, construido sobre el trabajo de la comunidad homebrew:
+* **archeide:** Creador original de SNEmulDS.
+* **bubble2k:** Nucleo de emulacion de CPU.
+* **gladius:** Motor de emulacion de sonido SPC.
+* **coto:** Actualizaciones del nucleo SNEmulDS DSi / TGDS.
+* **Sanrax:** Desarrollo de `snemulds-shim` y parches de compatibilidad de arranque directo.
+* **RocketRobz y equipo TWiLight Menu++:** Sistema TWiLight Menu++ y lanzadores directos.
 
 ---
 
 ## Licencia
 
-Este repositorio se distribuye bajo los terminos de la licencia **GNU General Public License v2.0 (GPL-2.0)**, respetando las licencias originales de los componentes derivados. Consulta el archivo [LICENSE](LICENSE) para mas detalles.
+Distribuido bajo la licencia **GNU General Public License v2.0 (GPL-2.0)**. Consulta [LICENSE](LICENSE) para mas detalles.
