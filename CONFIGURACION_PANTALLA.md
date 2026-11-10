@@ -57,7 +57,7 @@ No necesitas editar archivos para cambiar de modo:
 En este paquete ya dejamos configurados en `snemul.cfg` los siguientes perfiles optimos para los juegos mas populares:
 
 * **Super Mario World:**
-  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 1 | YScroll = 16`
+  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 0 | YScroll = 16`
 * **Donkey Kong Country 1, 2 y 3:**
   `SpeedHacks = 0 | BGPriorities = 3 | Scaled = 2 | Vblank = 1 | YScroll = 16`
 * **Chrono Trigger:**

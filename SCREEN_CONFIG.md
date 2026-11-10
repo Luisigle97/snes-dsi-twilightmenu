@@ -57,7 +57,7 @@ You do not need to edit config files to test different modes:
 The bundled `snemul.cfg` includes pre-tuned settings for popular classics:
 
 * **Super Mario World:**
-  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 1 | YScroll = 16`
+  `SpeedHacks = 1 | Transparency = 0 | Scaled = 2 | BG3Squish = 0 | YScroll = 16`
 * **Donkey Kong Country 1, 2 & 3:**
   `SpeedHacks = 0 | BGPriorities = 3 | Scaled = 2 | Vblank = 1 | YScroll = 16`
 * **Chrono Trigger:**
