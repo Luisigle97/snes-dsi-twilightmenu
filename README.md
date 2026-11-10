@@ -32,6 +32,39 @@ Este proyecto soluciona todos los problemas historicos de arranque, congelamient
 
 ---
 
+## Juegos Compatibles y Optimizados
+
+Todos los siguientes titulos cuentan con perfiles nativos pre-configurados en `snemul.cfg`, optimizados para pantalla completa (`Scaled = 2`), centrado vertical (`YScroll = 16`), sincronizacion por hardware VBlank y audio a 32 kHz:
+
+| Titulo | Estado | Optimizaciones Clave Aplicadas |
+| :--- | :--- | :--- |
+| **Super Mario World** | 🟢 60 FPS Perfecto | `SpeedHacks = 1`, `Scaled = 2`, `YScroll = 16` |
+| **Donkey Kong Country 1, 2 y 3** | 🟢 60 FPS Perfecto | `BGPriorities = 3`, `Vblank = 1`, `Scaled = 2` |
+| **The Legend of Zelda: A Link to the Past** | 🟢 60 FPS Perfecto | `Transparency = 0`, `Scaled = 2`, `YScroll = 16` |
+| **Chrono Trigger** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Sound = 1`, `Scaled = 2` |
+| **Final Fantasy IV, V y VI** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Sound = 1`, `Scaled = 2` |
+| **Super Metroid** | 🟢 60 FPS Perfecto | `SpeedHacks = 1`, `Vblank = 1`, `Scaled = 2` |
+| **Super Castlevania IV** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2`, `YScroll = 16` |
+| **TMNT IV: Turtles in Time** | 🟢 60 FPS Perfecto | `SpeedHacks = 1`, `Scaled = 2` |
+| **Top Gear 1 y 2 / Top Racer** | 🟢 60 FPS Perfecto | `BGLayers = 10101` *(Capa BG2 apagada para reparar pista y division)* |
+| **The Mask (La Mascara)** | 🟢 60 FPS Perfecto | `Transparency = 0`, `BGPriorities = 1` *(Sprites solidos sin parpadeo)* |
+| **F-Zero** | 🟢 60 FPS Perfecto | `Scaled = 2`, `Vblank = 1` |
+| **Aladdin (Capcom)** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2` |
+| **Goof Troop** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2` |
+| **Sunset Riders** | 🟢 60 FPS Perfecto | `SpeedHacks = 1`, `Vblank = 1`, `Scaled = 2` |
+| **Super Bomberman 1 al 5** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2` |
+| **Contra III: The Alien Wars** | 🟢 60 FPS Perfecto | `Transparency = 0`, `Vblank = 1`, `Scaled = 2` |
+| **Super Mario All-Stars** | 🟢 60 FPS Perfecto | `Scaled = 2`, `Vblank = 1` |
+| **Earthworm Jim 1 y 2** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2` |
+| **Zombies Ate My Neighbors** | 🟢 60 FPS Perfecto | `Vblank = 1`, `Scaled = 2` |
+| **Super Mario Kart** | 🟡 Jugable | Modo 7 funcional con ligero temblor de horizonte (`Vblank = 1`) |
+| **EarthBound** | 🟡 Jugable | Efectos psicodelicos de batalla simplificados por matrices de DS |
+| **Killer Instinct** | 🟡 Jugable | Rendimiento fluido con `SpeedHacks = 1` |
+
+> 📖 Para ver el analisis tecnico completo de compatibilidad, soluciones a glitches y la lista de juegos con chips especiales no compatibles (SuperFX, SA-1, DSP-4), consulta la [Guia de Compatibilidad y Solucion de Juegos](COMPATIBILIDAD.md).
+
+---
+
 ## Estructura del Repositorio
 
 ```text

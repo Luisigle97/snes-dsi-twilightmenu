@@ -32,6 +32,39 @@ This project resolves historical boot crashes, touchscreen lockups, empty ROM li
 
 ---
 
+## Compatible & Optimized Games
+
+All of the following titles feature native pre-configured profiles in `snemul.cfg`, tuned for full-screen scaling (`Scaled = 2`), vertical centering (`YScroll = 16`), hardware VBlank synchronization, and 32 kHz native audio:
+
+| Title | Status | Applied Key Optimizations |
+| :--- | :--- | :--- |
+| **Super Mario World** | 🟢 60 FPS Flawless | `SpeedHacks = 1`, `Scaled = 2`, `YScroll = 16` |
+| **Donkey Kong Country 1, 2 & 3** | 🟢 60 FPS Flawless | `BGPriorities = 3`, `Vblank = 1`, `Scaled = 2` |
+| **The Legend of Zelda: A Link to the Past** | 🟢 60 FPS Flawless | `Transparency = 0`, `Scaled = 2`, `YScroll = 16` |
+| **Chrono Trigger** | 🟢 60 FPS Flawless | `Vblank = 1`, `Sound = 1`, `Scaled = 2` |
+| **Final Fantasy IV, V & VI** | 🟢 60 FPS Flawless | `Vblank = 1`, `Sound = 1`, `Scaled = 2` |
+| **Super Metroid** | 🟢 60 FPS Flawless | `SpeedHacks = 1`, `Vblank = 1`, `Scaled = 2` |
+| **Super Castlevania IV** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2`, `YScroll = 16` |
+| **TMNT IV: Turtles in Time** | 🟢 60 FPS Flawless | `SpeedHacks = 1`, `Scaled = 2` |
+| **Top Gear 1 & 2 / Top Racer** | 🟢 60 FPS Flawless | `BGLayers = 10101` *(Layer BG2 disabled to fix track and split-screen)* |
+| **The Mask** | 🟢 60 FPS Flawless | `Transparency = 0`, `BGPriorities = 1` *(Solid character sprites without culling)* |
+| **F-Zero** | 🟢 60 FPS Flawless | `Scaled = 2`, `Vblank = 1` |
+| **Aladdin (Capcom)** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2` |
+| **Goof Troop** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2` |
+| **Sunset Riders** | 🟢 60 FPS Flawless | `SpeedHacks = 1`, `Vblank = 1`, `Scaled = 2` |
+| **Super Bomberman 1 through 5** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2` |
+| **Contra III: The Alien Wars** | 🟢 60 FPS Flawless | `Transparency = 0`, `Vblank = 1`, `Scaled = 2` |
+| **Super Mario All-Stars** | 🟢 60 FPS Flawless | `Scaled = 2`, `Vblank = 1` |
+| **Earthworm Jim 1 & 2** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2` |
+| **Zombies Ate My Neighbors** | 🟢 60 FPS Flawless | `Vblank = 1`, `Scaled = 2` |
+| **Super Mario Kart** | 🟡 Playable | Fully working Mode 7 with minor distant texture jitter (`Vblank = 1`) |
+| **EarthBound** | 🟡 Playable | Simplified battle background swirl effects due to DS matrix limits |
+| **Killer Instinct** | 🟡 Playable | Smooth framerate with `SpeedHacks = 1` |
+
+> 📖 For an in-depth technical analysis of compatibility, glitch fixes, and the list of unsupported cartridge coprocessor chips (SuperFX, SA-1, DSP-4), see the [Compatibility & Game Fixes Guide](COMPATIBILITY.md).
+
+---
+
 ## Repository Structure
 
 ```text
