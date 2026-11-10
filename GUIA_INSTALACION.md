@@ -1,4 +1,4 @@
-﻿# Guia Paso a Paso de Instalacion
+# Guia Paso a Paso de Instalacion
 
 Esta guia te mostrara como instalar y dejar listo el emulador de Super Nintendo (SNES) en tu **Nintendo DSi o Nintendo DSi XL** ejecutando **TWiLight Menu++ (version v27.25.1 o superior)**.
 
@@ -25,24 +25,24 @@ Esta guia te mostrara como instalar y dejar listo el emulador de Super Nintendo 
 La estructura resultante en tu tarjeta SD debe quedar asi:
 ```text
 sd:/
-â”œâ”€â”€ _nds/
-â”‚   â””â”€â”€ TWiLightMenu/
-â”‚       â”œâ”€â”€ addons/Virtual Console
-â”‚       â”œâ”€â”€ emulators/
-â”‚       â”‚   â”œâ”€â”€ snemulds-shim.nds
-â”‚       â”‚   â”œâ”€â”€ snemulds-shim.ini
-â”‚       â”‚   â”œâ”€â”€ SNEmulDS.srl
-â”‚       â”‚   â”œâ”€â”€ SNEmulDS.nds
-â”‚       â”‚   â”œâ”€â”€ SNEmulDS_0.6a.nds
-â”‚       â”‚   â”œâ”€â”€ SNEmulDS-legacy.nds
-â”‚       â”‚   â”œâ”€â”€ SNEmulDS-legacy-twlm-path.nds
-â”‚       â”‚   â””â”€â”€ snemul.cfg
-â”‚       â””â”€â”€ extras/
-â”‚           â”œâ”€â”€ config.sfc.ini
-â”‚           â””â”€â”€ config.smc.ini
-â”œâ”€â”€ snes/
-â”‚   â””â”€â”€ snemul.cfg
-â””â”€â”€ snemul.cfg
+|-- _nds/
+|   \-- TWiLightMenu/
+|       |-- addons/Virtual Console
+|       |-- emulators/
+|       |   |-- snemulds-shim.nds
+|       |   |-- snemulds-shim.ini
+|       |   |-- SNEmulDS.srl
+|       |   |-- SNEmulDS.nds
+|       |   |-- SNEmulDS_0.6a.nds
+|       |   |-- SNEmulDS-legacy.nds
+|       |   |-- SNEmulDS-legacy-twlm-path.nds
+|       |   \-- snemul.cfg
+|       \-- extras/
+|           |-- config.sfc.ini
+|           \-- config.smc.ini
+|-- snes/
+|   \-- snemul.cfg
+\-- snemul.cfg
 ```
 
 ### Paso 3: Agregar tus Juegos (ROMs)
@@ -79,4 +79,3 @@ sd:/
 * **Guardar partida en cualquier momento:** Toca la pantalla tactil inferior durante el juego y pulsa **Guardar Juego** (Save State). Para reanudarla despues, pulsa **Cargar Juego** (Load State).
 * **Partidas guardadas en bateria (SRAM):** Tras guardar partida dentro del propio juego (por ejemplo en el mapa de Super Mario World o un santuario de Zelda), toca la pantalla inferior, entra en **Opciones** y confirma la escritura de SRAM antes de apagar la consola.
 * **Alternar el modo de escalado:** Durante la partida, toca la pantalla inferior y pulsa en la opcion de escalado para probar entre `Scaled 2` (pantalla completa) o `Scaled 0` (pixel perfect con recorte).
-
