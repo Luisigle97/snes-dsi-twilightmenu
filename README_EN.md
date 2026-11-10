@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Nintendo%20DSi%20%7C%20DSi%20XL-e60012.svg)](https://en.wikipedia.org/wiki/Nintendo_DSi)
 [![Compatibility](https://img.shields.io/badge/TWiLight%20Menu%2B%2B-v27.25.1%2B-blue.svg)](https://github.com/DS-Homebrew/TWiLightMenu)
 [![License](https://img.shields.io/badge/License-GPL--2.0-green.svg)](LICENSE)
-[![Release](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/tag/v1.0.0)
+[![Release](https://img.shields.io/badge/Release-v1.1.0-orange.svg)](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/tag/v1.1.0)
 
 Optimized and modern **SNEmulDS (TWL DSi Mode @ 133 MHz)** bundle featuring native, direct integration for **TWiLight Menu++**.
 
@@ -89,7 +89,7 @@ snes-dsi-twilightmenu/
 |   |   \-- snemul.cfg
 |   \-- snemul.cfg
 |-- release/
-|   \-- SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip
+|   \-- SNEmulDS-DSi-TWiLightMenu-v1.1.0.zip
 |-- README.md                    <-- Main documentation (Spanish)
 |-- README_EN.md                 <-- Main documentation (English)
 |-- GUIA_INSTALACION.md          <-- Step-by-step installation guide (Spanish)
@@ -116,7 +116,7 @@ snes-dsi-twilightmenu/
 
 You can download the complete bundle ready to extract to the root of your SD card from the Releases tab:
 
-* **[Download SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/download/v1.0.0/SNEmulDS-DSi-TWiLightMenu-v1.0.0.zip)**
+* **[Download SNEmulDS-DSi-TWiLightMenu-v1.1.0.zip](https://github.com/Luisigle97/snes-dsi-twilightmenu/releases/download/v1.1.0/SNEmulDS-DSi-TWiLightMenu-v1.1.0.zip)**
 
 ---
 
