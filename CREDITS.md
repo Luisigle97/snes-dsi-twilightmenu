@@ -1,6 +1,6 @@
-# 🎖️ Créditos y Reconocimientos
+# Creditos y Reconocimientos
 
-Este paquete de integración y optimización reúne el trabajo acumulado durante más de dos décadas por destacados desarrolladores y hackers de la comunidad homebrew de la familia Nintendo DS/DSi:
+Este paquete de integracion y optimizacion reune el trabajo acumulado durante mas de dos decadas por destacados desarrolladores y hackers de la comunidad homebrew de la familia Nintendo DS/DSi:
 
 ---
 
@@ -10,19 +10,19 @@ Este paquete de integración y optimización reúne el trabajo acumulado durante
   * Proyecto: [SNEmulDS](https://www.gamebrew.org/wiki/SNEmulDS)
   * Rol: Creador original del emulador SNEmulDS (1997-2007) para la Nintendo DS.
 * **Bubble2k & Gladius**
-  * Rol: Desarrollo e ingeniería de los núcleos de emulación de la CPU 65C816 y el coprocesador de sonido Sony SPC700.
+  * Rol: Desarrollo e ingenieria de los nucleos de emulacion de la CPU 65C816 y el coprocesador de sonido Sony SPC700.
 * **Coto (cotodevel)**
   * Proyecto: [SNEmulDS Revival](https://github.com/cotodevel/snemulds)
-  * Rol: Modernización del código fuente, migración a *ToolchainGenericDS (TGDS)*, soporte para coprocesadores y habilitación del modo TWL DSi a 133 MHz con 16 MB de memoria RAM.
+  * Rol: Modernizacion del codigo fuente, migracion a *ToolchainGenericDS (TGDS)*, soporte para coprocesadores y habilitacion del modo TWL DSi a 133 MHz con 16 MB de memoria RAM.
 * **Sanrax**
   * Proyecto: [snemulds-shim](https://github.com/Sanrax/snemulds-shim)
-  * Rol: Chainloader, capa de traducción de argumentos ARGV entre BlocksDS/devkitPro y TGDS, parches en memoria RAM para los controles táctiles de la DSi, corrección de audio y lógica de autoboot.
+  * Rol: Chainloader, capa de traduccion de argumentos ARGV entre BlocksDS/devkitPro y TGDS, parches en memoria RAM para los controles tactiles de la DSi, correccion de audio y logica de autoboot.
 * **RocketRobz y el equipo DS-Homebrew**
   * Proyectos: [TWiLight Menu++](https://github.com/DS-Homebrew/TWiLightMenu) y [nds-bootstrap](https://github.com/DS-Homebrew/nds-bootstrap)
-  * Rol: Creación del frontend insignia y los cargadores personalizados para Nintendo DS, DSi y 3DS.
+  * Rol: Creacion del frontend insignia y los cargadores personalizados para Nintendo DS, DSi y 3DS.
 * **Mega-Mario / Arisotura**
   * Proyecto: [lolSnes](https://github.com/Arisotura/lolSnes)
-  * Rol: Investigación de temporizado de PPU y emulación de gráficos de SNES en hardware NDS.
+  * Rol: Investigacion de temporizado de PPU y emulacion de graficos de SNES en hardware NDS.
 
 ---
 
